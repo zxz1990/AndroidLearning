@@ -1,4 +1,4 @@
-package com.example.zxz.activity;
+package com.example.zxz.androidtest.activity;
 
         import android.app.Notification;
         import android.app.NotificationManager;
@@ -10,7 +10,6 @@ package com.example.zxz.activity;
         import android.widget.Button;
 
         import com.example.xuezhizxz.androidlearning.R;
-        import com.example.zxz.activity.BaseActivity;
 
 /**
  * Created by xuezhi.zxz on 2016/12/16.

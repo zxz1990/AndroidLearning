@@ -1,4 +1,4 @@
-package com.example.zxz.activity;
+package com.example.zxz.androidtest.activity;
 
 import android.app.Activity;
 

@@ -1,5 +1,5 @@
 // ISumAidlInterface.aidl
-package com.example.zxz.aidlservertest;
+package com.example.zxz.androidtest.service;
 
 // Declare any non-default types here with import statements
 
