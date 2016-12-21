@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.xuezhizxz.androidlearning.R;
+import com.example.zxz.androidtest.R;
 import com.example.zxz.androidtest.adapter.MyAdapter;
 import com.example.zxz.androidtest.data.TestData;
 

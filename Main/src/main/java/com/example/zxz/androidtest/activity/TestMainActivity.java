@@ -1,21 +1,22 @@
 package com.example.zxz.androidtest.activity;
 
-        import android.app.Notification;
-        import android.app.NotificationManager;
-        import android.app.PendingIntent;
-        import android.content.Intent;
-        import android.net.Uri;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-        import com.example.xuezhizxz.androidlearning.R;
+import com.example.zxz.androidtest.R;
+
 
 /**
  * Created by xuezhi.zxz on 2016/12/16.
  */
 
-public class TestMainActivity extends BaseActivity implements View.OnClickListener{
+public class TestMainActivity extends BaseActivity implements View.OnClickListener {
 
     private Notification mNotification = null;
     private NotificationManager mNotificationManager = null;
@@ -51,7 +52,7 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
                 mNotification.tickerText = "new TickerText";
                 mNotification.defaults |= Notification.DEFAULT_SOUND;
                 mNotification.flags = Notification.FLAG_AUTO_CANCEL;
-                mNotificationManager.notify(0,builder.build());
+                mNotificationManager.notify(0, builder.build());
                 break;
             default:
                 break;
