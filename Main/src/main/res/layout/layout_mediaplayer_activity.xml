@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="#7709dda0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/play"
+            android:text="播放"
+            style="@style/MediaPlayerButton"/>
+        <Button
+            android:id="@+id/stop"
+            android:text="停止"
+            style="@style/MediaPlayerButton"/>
+        <Button
+            android:id="@+id/pause"
+            android:text="暂停"
+            style="@style/MediaPlayerButton"/>
+        <Button
+            android:id="@+id/resume"
+            android:text="恢复"
+            style="@style/MediaPlayerButton"/>
+        <Button
+            android:id="@+id/seek"
+            android:text="指定"
+            style="@style/MediaPlayerButton"/>
+    </LinearLayout>
+    <VideoView
+        android:id="@+id/video_view"
+        android:background="#3333aaff"
+        android:layout_margin="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </VideoView>
+</LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
@@ -7,4 +8,46 @@
         android:text="显示通知"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_show_recyclerview_activity"
+        android:text="打开RecyclerViewActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_show_viewpager_activity"
+        android:text="打开ViewPagerActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_start_animation"
+        android:text="显示Toast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_start_mediaplayer"
+        android:text="打开播放器"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_start_thread"
+        android:text="新建线程"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btn_sendto_thread"
+        android:text="发送到线程"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.zxz.androidtest.widget.TouchingView
+        android:id="@+id/btn_touchingview"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
 </LinearLayout>

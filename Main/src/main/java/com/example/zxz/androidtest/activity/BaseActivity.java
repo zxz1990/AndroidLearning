@@ -9,6 +9,8 @@ import com.yunos.viewinject.ViewUtils;
  */
 public class BaseActivity extends Activity{
 
+    public final String TAG = this.getClass().getSimpleName();
+
     @Override
     protected void onStart() {
         super.onStart();
