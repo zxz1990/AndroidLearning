@@ -20,6 +20,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/btn_show_event_test_activity"
+        android:text="打开事件测试activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
         android:id="@+id/btn_start_animation"
         android:text="显示Toast"
         android:layout_width="match_parent"
@@ -42,6 +47,7 @@
         android:text="发送到线程"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 
     <com.example.zxz.androidtest.widget.TouchingView
         android:id="@+id/btn_touchingview"

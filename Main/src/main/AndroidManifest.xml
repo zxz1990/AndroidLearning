@@ -118,6 +118,8 @@
                 <action android:name="android.intent.action.CALL"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.EventTestActivity"/>
     </application>
 
 </manifest>

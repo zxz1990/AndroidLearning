@@ -107,6 +107,16 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
             }
         });
 
+
+        findViewById(R.id.btn_show_event_test_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(TestMainActivity.this, EventTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
         mTouchingView = (TouchingView) findViewById(R.id.btn_touchingview);
         mBtnNotification.setOnClickListener(this);
 
@@ -173,7 +183,7 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.btn_show_notification:
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("smsto:18969186090"));
+                intent.setData(Uri.parse("smsto:110"));
                 intent.putExtra("sms_body", "消息体");
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
