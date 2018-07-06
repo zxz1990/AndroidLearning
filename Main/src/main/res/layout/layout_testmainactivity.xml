@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:isScrollContainer="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
@@ -33,6 +34,12 @@
     <Button
         android:id="@+id/btn_start_mediaplayer"
         android:text="打开播放器"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_start_float_window"
+        android:text="打开悬浮框"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
