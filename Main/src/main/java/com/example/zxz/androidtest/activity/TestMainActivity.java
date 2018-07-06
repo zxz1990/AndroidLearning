@@ -137,6 +137,19 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
         });
     }
 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState() called with: outState = [" + outState + "]");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d(TAG, "onRestoreInstanceState() called with: savedInstanceState = [" + savedInstanceState + "]");
+    }
+
     @Override
     public boolean onSearchRequested() {
         return super.onSearchRequested();

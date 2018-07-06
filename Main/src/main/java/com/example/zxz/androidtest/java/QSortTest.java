@@ -66,10 +66,10 @@ public class QSortTest {
     static void outputTime() {
         long oldTime = timeMill;
         timeMill = new Date().getTime();
-        if(oldTime == 0) {
+        if (oldTime == 0) {
             return;
         }
-        System.out.println("time:"+(timeMill-oldTime));
+        System.out.println("time:" + (timeMill - oldTime));
     }
 
     public static void main(String[] args) {
@@ -87,7 +87,7 @@ public class QSortTest {
         output("a1", a);
         output("b1", b);
 
-        System.out.println("equals:"+ Arrays.equals(a,b));
+        System.out.println("equals:" + Arrays.equals(a, b));
 
         outputTime();
         Arrays.sort(b);
@@ -95,12 +95,36 @@ public class QSortTest {
         outputTime();
         qsort(a, 0, a.length - 1);
 
-
         outputTime();
         output("@@@@a2", a);
         output("@@@@b2", b);
 
-        System.out.println("equals:"+ Arrays.equals(a,b));
+        System.out.println("equals:" + Arrays.equals(a, b));
 
+        int[] numbers = {2, 1, 3, 1, 4};
+        int[] duplication = new int[2];
+        duplicate(numbers, 0, duplication);
+    }
+
+    static final int M = 1 << 31;
+
+    public static boolean duplicate(int numbers[], int length, int[] duplication) {
+        for (int i = 0; i < numbers.length; ++i) {
+            int t;
+            if (numbers[i] < 0) {
+                t = (~M) & numbers[i];
+            } else {
+                t = numbers[i];
+            }
+
+            int tmp = M | t;
+            if (numbers[t] < 0) {
+                duplication[0] = t;
+                return true;
+            }
+
+            numbers[t] = tmp;
+        }
+        return false;
     }
 }
