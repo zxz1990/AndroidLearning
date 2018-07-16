@@ -130,9 +130,17 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
             }
         });
 
+        findViewById(R.id.btn_show_custom_view_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(TestMainActivity.this, CustomViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
         mTouchingView = (TouchingView)findViewById(R.id.btn_touchingview);
         mBtnNotification.setOnClickListener(this);
-
         mBtnNotification.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

@@ -100,6 +100,8 @@
         </activity>
 
         <activity android:name=".activity.EventTestActivity" />
+
+        <activity android:name=".activity.CustomViewActivity"/>
     </application>
 
 </manifest>

@@ -26,6 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/btn_show_custom_view_activity"
+        android:text="打开自定义view activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
         android:id="@+id/btn_start_animation"
         android:text="显示Toast"
         android:layout_width="match_parent"
