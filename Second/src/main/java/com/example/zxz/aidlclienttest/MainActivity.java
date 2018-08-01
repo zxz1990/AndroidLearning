@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.zxz.androidtest.service.ISumAidlInterface;
+import com.yunos.tv.second.R;
 
 /**
  * Created by xuezhi.zxz on 2015/12/30.

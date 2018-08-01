@@ -1,12 +1,10 @@
 package com.example.zxz.androidtest.activity;
 
-import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Build;
@@ -19,8 +17,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zxz.androidtest.R;
@@ -135,6 +131,15 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(TestMainActivity.this, CustomViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn_start_lottie_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(TestMainActivity.this, LottieTestActivity.class);
                 startActivity(intent);
             }
         });

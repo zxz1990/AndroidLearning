@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 import com.example.zxz.androidtest.R;
-import com.yunos.viewinject.ViewUtils;
 
 /**
  * Created by xuezhi.zxz on 2015/8/31.

@@ -30,6 +30,12 @@
         android:text="打开自定义view activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_start_lottie_activity"
+        android:text="打开lottie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn_start_animation"
         android:text="显示Toast"
