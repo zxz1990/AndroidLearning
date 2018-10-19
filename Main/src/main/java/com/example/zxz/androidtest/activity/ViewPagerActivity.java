@@ -3,6 +3,7 @@ package com.example.zxz.androidtest.activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -13,6 +14,9 @@ import com.example.zxz.androidtest.TestFragment;
 import com.example.zxz.androidtest.adapter.MyFragmentStatePagerAdapter;
 import com.example.zxz.androidtest.adapter.MyPagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by xuezhi.zxz on 2017/6/21.
  */
@@ -22,6 +26,7 @@ public class ViewPagerActivity extends FragmentActivity {
     private ViewPager mViewPager;
     private MyPagerAdapter mAdapter;
     private MyFragmentStatePagerAdapter mFragmentStatePagerAdapter;
+    private List<TestFragment> mFragments;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +37,16 @@ public class ViewPagerActivity extends FragmentActivity {
         FragmentManager fm = getSupportFragmentManager();
         mFragmentStatePagerAdapter = new MyFragmentStatePagerAdapter(fm);
 //        initAdapter();
+        mFragments = new ArrayList<>();
+
         initFragmentStateAdapter();
+
+        findViewById(R.id.btn_change_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragment();
+            }
+        });
     }
 
     void initAdapter() {
@@ -65,16 +79,35 @@ public class ViewPagerActivity extends FragmentActivity {
     }
 
     void initFragmentStateAdapter() {
+        mFragments.clear();
         for (int i = 0; i < 10; ++i) {
             TestFragment fragment = new TestFragment();
             Bundle bundle = new Bundle();
+            bundle.putInt("id", i);
             bundle.putInt("position", i);
+            bundle.putString("text", "位置"+i);
             fragment.setArguments(bundle);
-            mFragmentStatePagerAdapter.addFragment(fragment);
+            mFragments.add(fragment);
         }
+        mFragmentStatePagerAdapter.setFragments(mFragments);
+
         mViewPager.setAdapter(mFragmentStatePagerAdapter);
 
         mViewPager.setCurrentItem(6, true);
+    }
+
+    void changeFragment() {
+        mFragments.remove(2);
+
+        TestFragment fragment = new TestFragment();
+        Bundle bundle = new Bundle();
+        int id = 100;
+        bundle.putInt("id", id);
+        bundle.putInt("position", id);
+        bundle.putString("text", "位置"+id);
+        fragment.setArguments(bundle);
+        mFragments.add(5, fragment);
+        mFragmentStatePagerAdapter.notifyDataSetChanged();
     }
 
 }

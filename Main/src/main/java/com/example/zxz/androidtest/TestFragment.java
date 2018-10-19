@@ -19,6 +19,8 @@ public class TestFragment extends Fragment {
 
     private String TAG = TestFragment.class.getSimpleName();
     private int mPosition;
+    private int mId;
+    private String mContent;
 
     public TestFragment() {
         super();
@@ -27,6 +29,14 @@ public class TestFragment extends Fragment {
     @Override
     public void setArguments(Bundle args) {
         super.setArguments(args);
+
+        Bundle bundle = getArguments();
+        mPosition = bundle.getInt("position");
+        mContent = bundle.getString("text");
+        mId = bundle.getInt("id");
+        if (bundle != null) {
+            TAG = TestFragment.class.getSimpleName() + mPosition;
+        }
     }
 
     @Override
@@ -40,7 +50,7 @@ public class TestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView() called with: inflater = [" + inflater + "], container = [" + container + "], savedInstanceState = [" + savedInstanceState + "]");
         View view = inflater.inflate(R.layout.layout_testfragment, container, false);
-        ((TextView) view.findViewById(R.id.textview)).setText("测试的文本:"+mPosition);
+        ((TextView) view.findViewById(R.id.textview)).setText("测试的文本:" + mContent);
         return view;
     }
 
@@ -71,11 +81,6 @@ public class TestFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        Bundle bundle = getArguments();
-        mPosition = bundle.getInt("position");
-        if (bundle != null) {
-            TAG = TestFragment.class.getSimpleName() + mPosition;
-        }
         Log.d(TAG, "onAttach() called with: context = [" + context + "]");
     }
 
@@ -107,5 +112,9 @@ public class TestFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy() called");
+    }
+
+    public String getTitle() {
+        return "标题：" + mId;
     }
 }
