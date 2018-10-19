@@ -74,12 +74,12 @@
                 <!--<category android:name="android.intent.category.HOME"/>-->
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".activity.RecyclerViewActivity"
-            android:icon="@drawable/home_mode_bubble3">
+            android:name=".activity.RecyclerViewActivity">
             <intent-filter>
                 <!--<action android:name="android.intent.action.MAIN"/>-->
                 <category android:name="android.intent.category.LAUNCHER" />
