@@ -58,13 +58,19 @@
         android:id="@+id/btn_start_thread"
         android:text="新建线程"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btn_sendto_thread"
         android:text="发送到线程"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_test"
+        android:text="测试用的"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
     <com.example.zxz.androidtest.widget.TouchingView

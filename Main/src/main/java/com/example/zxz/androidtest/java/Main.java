@@ -1,6 +1,6 @@
 package com.example.zxz.androidtest.java;
 
-import java.math.BigInteger;
+import java.util.LinkedList;
 
 class SuperClass {
 
@@ -14,7 +14,16 @@ class SuperClass {
 
     }
 
-    class Inner$Inner2{}
+    public SuperClass() {
+
+    }
+
+    public static void print() {
+        System.out.println("super print");
+    }
+
+    class Inner$Inner2 {
+    }
 
     public static class Inner {
         public Inner() {
@@ -51,18 +60,19 @@ class SuperClass {
             runnable.run();
             test(sb);
 
-            System.out.println(sb1+","+sb2+","+sb3);
+            System.out.println(sb1 + "," + sb2 + "," + sb3);
 
-            System.out.println(sb1==sb2);
-            System.out.println(sb1==sb3);
-            System.out.println(sb2==sb3);
+            System.out.println(sb1 == sb2);
+            System.out.println(sb1 == sb3);
+            System.out.println(sb2 == sb3);
             //sb.append(0);
         }
 
         class Inner12 {
 
         }
-        class dd$ee{
+
+        class dd$ee {
 
         }
     }
@@ -83,22 +93,33 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int x = SubClass.count;
+        Solution s = new Solution();
+        int[] a = {10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println(s.minNumberInRotateArray(a));
+//        SubClass.print();
+//        BigInteger[] a = new BigInteger[10];
+//        for (int i = 0; i < a.length; ++i) {
+//            a[i] = new BigInteger("123");
+//            System.out.println(a[i]);
+//        }
 
-        SuperClass sc = new SuperClass();
-        //SuperClass.Inner inner = sc.new Inner();
 
-        SuperClass.Inner inner1 = new SuperClass.Inner();
-        inner1.hello();
-
-        BigInteger[][] a = new BigInteger[2][];
-        for (int i = 0; i < a.length; ++i) {
-            a[i] = new BigInteger[4];
-            for (int j = 0; j < a[i].length; ++j) {
-                System.out.println(a[i][j]);
-                //a[i][j]=i+j;
-            }
-        }
+//        int x = SubClass.count;
+//
+//        SuperClass sc = new SuperClass();
+//        //SuperClass.Inner inner = sc.new Inner();
+//
+//        SuperClass.Inner inner1 = new SuperClass.Inner();
+//        inner1.hello();
+//
+//        BigInteger[][] a = new BigInteger[2][];
+//        for (int i = 0; i < a.length; ++i) {
+//            a[i] = new BigInteger[4];
+//            for (int j = 0; j < a[i].length; ++j) {
+//                System.out.println(a[i][j]);
+//                //a[i][j]=i+j;
+//            }
+//        }
 
         //for(int i=0;i<a.length;++i) {
         //    for(int j=0;j<a[i].length;++j) {

@@ -1,1 +1,1 @@
-include ':Main', ':Second'
+include ':Main', ':Second', ':AptAnnotation', ':AptCompiler'

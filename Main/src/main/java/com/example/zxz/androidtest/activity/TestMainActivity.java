@@ -3,14 +3,20 @@ package com.example.zxz.androidtest.activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.HandlerThread;
 import android.provider.Settings;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -20,16 +26,22 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.zxz.androidtest.R;
+import com.example.zxz.androidtest.aptannotation.AutoCreate;
+import com.example.zxz.androidtest.aptannotation.BindView;
 import com.example.zxz.androidtest.utils.ReflectUtils;
 import com.example.zxz.androidtest.widget.TouchingView;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by xuezhi.zxz on 2016/12/16.
  */
 
+@AutoCreate
 public class TestMainActivity extends BaseActivity implements View.OnClickListener {
 
     public static final String TAG = TestMainActivity.class.getSimpleName();
@@ -38,11 +50,23 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
     private NotificationManager mNotificationManager = null;
     private Button mBtnNotification = null;
     private TouchingView mTouchingView = null;
+    private MutableLiveData<String> liveData = null;
+
+    @BindView(R.id.btn_test)
+    @butterknife.BindView(R.id.btn_test)
+    Button btn = null;
+
+    @OnClick(R.id.btn_test)
+    void submit() {
+        Toast.makeText(this, "submit", Toast.LENGTH_LONG).show();
+        btn.setBackgroundColor(Color.RED);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_testmainactivity);
+        ButterKnife.bind(this);
         mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 
         mBtnNotification = (Button)findViewById(R.id.btn_show_notification);
@@ -150,7 +174,17 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Log.d(TAG, "onTouch() called with: v = [" + v + "], event = [" + event + "]");
+                liveData.postValue("123123");
                 return false;
+            }
+        });
+
+        liveData = new MutableLiveData<>();
+
+        liveData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                mBtnNotification.setText(s);
             }
         });
 
@@ -158,6 +192,7 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Log.d(TAG, "onTouch() called with: v = [" + v + "], event = [" + event + "]");
+
                 return false;
             }
         });
@@ -370,5 +405,11 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
         } else {
             return true;
         }
+    }
+
+    @Override
+    protected boolean enableSlideBack() {
+
+        return false;
     }
 }
