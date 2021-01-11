@@ -1,6 +1,8 @@
 package com.example.xuezhizxz.androidlearning;
 
 import com.android.dx.mockito.inline.extended.ExtendedMockito;
+import com.android.dx.mockito.inline.extended.StaticMockitoSessionBuilder;
+import com.example.zxz.androidtest.utils.ActivityStack;
 import com.example.zxz.androidtest.utils.AndroidTestUtils;
 
 import org.junit.After;
@@ -42,12 +44,19 @@ public class MockTest {
   //  @Mock
   //  ViewModelProvider mViewModelProvider;
 
+  private MockitoSession session;
+
   @Before
   public void setUpBefore() {
+    session =
+        ExtendedMockito.mockitoSession().spyStatic(AndroidTestUtils.class).spyStatic(ActivityStack.class).startMocking();
   }
 
   @After
   public void setUpAfter() {
+    if (session != null) {
+      session.finishMocking();
+    }
   }
 
   @Test
@@ -57,23 +66,17 @@ public class MockTest {
     //    Mockito.when(AndroidTestUtils.getString()).thenReturn("mock的数据");
     //    Log.i("ZXZ", "mock结束");
 
-    MockitoSession session =
-        ExtendedMockito.mockitoSession().spyStatic(AndroidTestUtils.class).startMocking();
-    try {
-      // By default all static methods of the mocked class should return the default answers
-      //      assertNull(AndroidTestUtils.getString());
+    // By default all static methods of the mocked class should return the default answers
+    //      assertNull(AndroidTestUtils.getString());
 
-      // Super class is not mocked
-      System.out.println("testStatic1: str1=" + AndroidTestUtils.getString1() + "，str2=" + AndroidTestUtils.getString2());
-      when(AndroidTestUtils.getString1()).thenReturn("fake1");
-      System.out.println("testStatic2: str1=" + AndroidTestUtils.getString1() + "，str2=" + AndroidTestUtils.getString2());
+    // Super class is not mocked
+    System.out.println("testStatic1: str1=" + AndroidTestUtils.getString1() + "，str2=" + AndroidTestUtils.getString2());
+    when(AndroidTestUtils.getString1()).thenReturn("fake1");
+    System.out.println("testStatic2: str1=" + AndroidTestUtils.getString1() + "，str2=" + AndroidTestUtils.getString2());
 
-      // Make sure behavior is changed
+    // Make sure behavior is changed
 
-      // Super class should not be affected
-    } finally {
-      session.finishMocking();
-    }
+    // Super class should not be affected
 
   }
 
