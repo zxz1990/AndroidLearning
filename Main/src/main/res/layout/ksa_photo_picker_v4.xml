@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <View
+    android:id="@+id/statusbar_holder"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_alignParentTop="true"
+    android:visibility="gone" />
+
+  <RelativeLayout
+    android:id="@+id/photo_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:layout_below="@+id/statusbar_holder">
+
+    <RelativeLayout
+      android:id="@+id/photo_picker_title_bar"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      tools:layout_height="20dp"
+      >
+
+      <ImageButton
+        android:id="@+id/left_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="1dp"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="返回"
+        android:scaleType="center"
+        android:src="@drawable/ksa_universal_icon_close_black_l_normal"/>
+
+      <TextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:background="@drawable/ksa_universal_icon_close_black_l_normal"
+        android:text="测试"/>
+
+
+<!--      <ImageView-->
+<!--        android:id="@+id/album_indicator"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginLeft="2dp"-->
+<!--        android:clickable="false"-->
+<!--        android:src="@drawable/ksa_list_arrow_btn"-->
+<!--        android:visibility="gone" />-->
+    </RelativeLayout>
+
+    <View
+      android:id="@+id/album_list_divider"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_below="@id/photo_picker_title_bar"
+      android:background="#000000"
+      android:visibility="invisible" />
+
+    <FrameLayout
+      android:id="@+id/album_list_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/album_list_divider"
+      android:visibility="gone" />
+  </RelativeLayout>
+
+
+  <FrameLayout
+    android:id="@+id/preview_click_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone" />
+
+  <FrameLayout
+    android:id="@+id/bottom_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:visibility="gone" />
+
+  <FrameLayout
+    android:id="@+id/preview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+      android:id="@+id/preview_frame_cover"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+
+    <FrameLayout
+      android:id="@+id/preview_frame"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+
+  </FrameLayout>
+
+
+</RelativeLayout>

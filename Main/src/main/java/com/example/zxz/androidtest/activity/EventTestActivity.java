@@ -11,11 +11,18 @@ import com.example.zxz.androidtest.R;
 /**
  * Created by xuezhi.zxz on 2015/8/31.
  */
-public class EventTestActivity extends Activity{
+public class EventTestActivity extends Activity implements IActivity{
     private static final String TAG = "EventTestActivity";
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate() {
+
+    }
+
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_test);
     }

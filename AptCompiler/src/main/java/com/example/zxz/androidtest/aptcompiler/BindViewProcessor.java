@@ -1,7 +1,7 @@
 package com.example.zxz.androidtest.aptcompiler;
 
 import com.example.zxz.androidtest.aptannotation.AutoCreate;
-import com.google.auto.service.AutoService;
+//import com.google.auto.service.AutoService;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
@@ -21,7 +21,7 @@ import javax.lang.model.element.Modifier;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
 
-@AutoService(Processor.class)
+//@AutoService(Processor.class)
 public class BindViewProcessor extends AbstractProcessor {
 
     @Override

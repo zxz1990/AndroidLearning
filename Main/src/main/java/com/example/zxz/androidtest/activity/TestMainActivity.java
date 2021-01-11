@@ -1,9 +1,11 @@
 package com.example.zxz.androidtest.activity;
 
+import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 
+import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
@@ -196,6 +198,13 @@ public class TestMainActivity extends BaseActivity implements View.OnClickListen
                 return false;
             }
         });
+
+
+        ActivityCompat.requestPermissions(this,
+            new String[]{
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_PHONE_STATE
+            }, 1);
     }
 
     @Override
