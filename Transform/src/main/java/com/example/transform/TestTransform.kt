@@ -46,7 +46,7 @@ class TestTransform : Transform() {
                     directoryInput.name,
                     directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY
                 )
-                println("Directory output dest: ${dest.absolutePath}")
+                log("Directory output dest: ${dest.absolutePath}")
                 FileUtils.copyDirectory(directoryInput.file, dest)
             }
             input.jarInputs.forEach { jarInput ->

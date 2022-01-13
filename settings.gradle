@@ -1,3 +1,2 @@
 include ':Main', ':Second', ':AptAnnotation', ':AptCompiler'
-include ':buildSrc'
-include ':Transform'
+include ':lib'

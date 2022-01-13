@@ -43,6 +43,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.5"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.0"
     api project(path: ':AptAnnotation')
+    api project(path: ':lib')
 
 
 //    api project(path: ':AptCompiler')
