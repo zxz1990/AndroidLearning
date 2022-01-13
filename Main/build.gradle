@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: com.example.transform.TransformPlugin
+//apply plugin: com.example.buildsrc.MyPlugin
+//apply plugin: com.example.buildsrc.MyTestPlugin
 
 android {
     compileSdkVersion 31
@@ -22,8 +25,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     packagingOptions {
         pickFirst 'mockito-extensions/*'

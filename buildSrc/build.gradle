@@ -1,0 +1,55 @@
+buildscript {
+    ext.kotlin_version = '1.4.10'
+    repositories {
+        mavenLocal()
+
+        maven {
+            url 'https://maven.aliyun.com/nexus/content/groups/public/'
+        }
+
+        jcenter()
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation localGroovy()
+    implementation gradleApi()
+    implementation 'com.android.tools.build:gradle:3.5.4'
+
+    implementation project(":Transform")
+}
+
+
+allprojects {
+    repositories {
+        mavenLocal()
+        maven {
+            url 'https://maven.aliyun.com/nexus/content/groups/public/'
+        }
+
+        jcenter()
+        mavenCentral()
+
+        google()
+    }
+}
